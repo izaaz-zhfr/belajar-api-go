@@ -5,7 +5,7 @@ Database memakai file `data.sqlite` yang sudah ada di folder project.
 
 ## 1. Syarat
 
-- Go 1.27.1+ (project ini diinstall via Homebrew di macOS)
+- Go 1.27.1+ 
 - File `data.sqlite` harus ada di root project
 
 Cek Go:
@@ -14,11 +14,7 @@ Cek Go:
 go version
 ```
 
-Kalau di Mac pakai Homebrew dan `go` tidak ketemu:
 
-```bash
-export PATH="/opt/homebrew/bin:$PATH"
-go version
 ```
 
 ## 2. Install dependency
