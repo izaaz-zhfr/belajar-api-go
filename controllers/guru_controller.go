@@ -8,7 +8,7 @@ import (
 	"goapi/models"
 )
 
-// GET /api/guru
+// GET /api/guru - semua guru
 func GetGuru(c *gin.Context) {
 	var guru []models.Guru
 	if err := config.DB.Find(&guru).Error; err != nil {

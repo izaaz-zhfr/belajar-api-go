@@ -24,6 +24,7 @@ func ConnectDatabase() {
 	// Kalau mau bikin tabel otomatis saat kosong, uncomment ini:
 	// _ = database.AutoMigrate(&models.Kelas{}, &models.Siswa{}, &models.KartuPelajar{})
 	_ = models.Kelas{}
+	_ = models.Guru{}
 	_ = database.AutoMigrate(&models.Guru{})
 
 	DB = database
