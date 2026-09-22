@@ -3,7 +3,7 @@ package config
 import (
 	"log"
 
-	"gorm.io/driver/sqlite"
+	"github.com/glebarez/sqlite" // Menggunakan driver Pure Go (bebas CGo)
 	"gorm.io/gorm"
 	"goapi/models"
 )
@@ -24,6 +24,7 @@ func ConnectDatabase() {
 	// Kalau mau bikin tabel otomatis saat kosong, uncomment ini:
 	// _ = database.AutoMigrate(&models.Kelas{}, &models.Siswa{}, &models.KartuPelajar{})
 	_ = models.Kelas{}
+	_ = database.AutoMigrate(&models.Guru{})
 
 	DB = database
 }

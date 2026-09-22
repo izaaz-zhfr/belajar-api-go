@@ -49,3 +49,16 @@ type KartuPelajar struct {
 func (KartuPelajar) TableName() string {
 	return "kartu_pelajars"
 }
+
+// Tabel: gurus (id, nama, mapel)
+type Guru struct {
+	ID        uint      `gorm:"primaryKey" json:"id"`
+	Nama      string    `gorm:"not null" json:"nama"`
+	Mapel     string    `gorm:"not null" json:"mapel"`
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
+}
+
+func (Guru) TableName() string {
+	return "gurus"
+}

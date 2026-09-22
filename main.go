@@ -14,7 +14,7 @@ func main() {
 
 	// Cek server hidup
 	r.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H{"message": "API Sekolah jalan! Coba /api/kelas, /api/siswa, /api/kartu"})
+		c.JSON(200, gin.H{"message": "API Sekolah jalan! Coba /api/kelas, /api/siswa, /api/kartu, /api/guru"})
 	})
 
 	api := r.Group("/api")
@@ -39,6 +39,13 @@ func main() {
 		api.POST("/kartu", controllers.CreateKartu)
 		api.PUT("/kartu/:id", controllers.UpdateKartu)
 		api.DELETE("/kartu/:id", controllers.DeleteKartu)
+
+		// Guru
+		api.GET("/guru", controllers.GetGuru)
+		api.GET("/guru/:id", controllers.GetGuruByID)
+		api.POST("/guru", controllers.CreateGuru)
+		api.PUT("/guru/:id", controllers.UpdateGuru)
+		api.DELETE("/guru/:id", controllers.DeleteGuru)
 	}
 
 	r.Run(":8080") // jalan di http://localhost:8080
